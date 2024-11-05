@@ -16,7 +16,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String TABLE_USERS = "users";
     private static final String COLUMN_ID = "id";
     private static final String COLUMN_USERNAME = "username";
-    private static final String COLUMN_EMAIL = "email"; // kolom baru untuk email
+    private static final String COLUMN_EMAIL = "email"; // kolom untuk email
     private static final String COLUMN_PASSWORD = "password";
 
     public DatabaseHelper(Context context) {
@@ -29,7 +29,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String CREATE_USERS_TABLE = "CREATE TABLE " + TABLE_USERS + "("
                 + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + COLUMN_USERNAME + " TEXT, "
-                + COLUMN_EMAIL + " TEXT, "    // kolom baru email
+                + COLUMN_EMAIL + " TEXT, "    // kolom email
                 + COLUMN_PASSWORD + " TEXT" + ")";
         db.execSQL(CREATE_USERS_TABLE);
     }
@@ -54,13 +54,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return result != -1; // return true jika berhasil
     }
 
-    // Cek apakah pengguna ada berdasarkan email dan password
-    public boolean checkUser(String email, String password) {
+    // Cek apakah pengguna ada berdasarkan username dan password
+    public boolean checkUser(String username, String password) {
         SQLiteDatabase db = this.getReadableDatabase();
         String query = "SELECT * FROM " + TABLE_USERS + " WHERE " +
-                COLUMN_EMAIL + "=? AND " + COLUMN_PASSWORD + "=?";
+                COLUMN_USERNAME + "=? AND " + COLUMN_PASSWORD + "=?";
 
-        Cursor cursor = db.rawQuery(query, new String[]{email, password});
+        Cursor cursor = db.rawQuery(query, new String[]{username, password});
         boolean exists = cursor.getCount() > 0;
         cursor.close();
         db.close();

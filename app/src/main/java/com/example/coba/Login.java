@@ -15,9 +15,10 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class Login extends AppCompatActivity {
-    private EditText usernameEditText; // Mengubah nama variabel untuk username
+    private EditText usernameEditText;
     private EditText passwordEditText;
     private Button loginButton;
+    private Button signupButton; // Tambahkan variabel untuk tombol signup
     private DatabaseHelper databaseHelper;
 
     @SuppressLint("MissingInflatedId")
@@ -28,9 +29,10 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         // Inisialisasi komponen UI
-        usernameEditText = findViewById(R.id.username); // Mengambil username dari EditText
+        usernameEditText = findViewById(R.id.username);
         passwordEditText = findViewById(R.id.password);
         loginButton = findViewById(R.id.loginButton);
+        signupButton = findViewById(R.id.signupButton); // Inisialisasi tombol signup
         databaseHelper = new DatabaseHelper(this);
 
         // Mengatur padding untuk menghindari overlay dengan sistem bar
@@ -45,20 +47,31 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Ambil input pengguna
-                String username = usernameEditText.getText().toString(); // Mengambil username
+                String username = usernameEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
 
-                // Verifikasi login
-                if (databaseHelper.checkUser(username, password)) { // Menggunakan username untuk verifikasi
-                    // Jika berhasil login, arahkan ke activity lain
+                if (databaseHelper.checkUser(username, password)) {
+                    // Jika berhasil login, arahkan ke activity Home
                     Toast.makeText(Login.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(Login.this, MainActivity.class); // Ganti dengan activity yang sesuai
+                    Intent intent = new Intent(Login.this, Home.class);
+                    intent.putExtra("USERNAME", username); // Mengirim username ke Home
                     startActivity(intent);
                     finish(); // Tutup activity login
                 } else {
                     // Jika gagal login, tampilkan pesan kesalahan
                     Toast.makeText(Login.this, "Username atau Password Salah", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+
+        // Set listener untuk tombol signup
+        signupButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Arahkan ke activity Signup
+                Intent intent = new Intent(Login.this, Signup.class);
+                startActivity(intent);
             }
         });
     }
