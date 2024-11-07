@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FormFaq">
+
+    <!-- Back Button -->
+    <ImageButton
+        android:id="@+id/backbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:padding="16dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:contentDescription="Back Button"
+        android:minHeight="48dp"
+        android:minWidth="48dp" />
+
+    <!-- Profile Icon -->
+    <ImageButton
+        android:id="@+id/iconProfile"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="profile akun"
+        android:scaleType="fitCenter"
+        android:src="@drawable/akun"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="30dp" />
+
+    <ImageView
+        android:id="@+id/logofishbites"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="95dp"
+        android:scaleType="centerCrop"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/logo_fishbites" />
+
+    <!--text butuh informasi-->
+    <TextView
+        android:id="@+id/textviewfaq"
+        android:layout_width="271dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="127dp"
+        android:fontFamily="@font/readex_boldd"
+        android:text="Butuh Informasi Lebih? Sampaikan Pertanyaanmu!"
+        android:textColor="@color/ijo"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--bg form faq !-->
+    <ImageView
+        android:id="@+id/bgformfaq"
+        android:layout_width="396dp"
+        android:layout_height="833dp"
+        android:layout_marginTop="124dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/bg_ijo" />
+
+    <!-- Background for EditText 2 (bg_ulasan) -->
+    <TextView
+        android:id="@+id/textemailfaq"
+        android:layout_width="80dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="340dp"
+        android:fontFamily="@font/readex_boldd"
+        android:text="Email "
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imgbtn_namafaq"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/bg_inputfaq"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textnamafaq"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="Background input"/>
+
+    <EditText
+        android:id="@+id/editTextnamafaq"
+        android:layout_width="330dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="1dp"
+        android:fontFamily="@font/readexpro_light"
+        android:hint="nama anda"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintStart_toStartOf="@id/imgbtn_namafaq"
+        app:layout_constraintTop_toTopOf="@id/imgbtn_namafaq" />
+
+    <TextView
+        android:id="@+id/textnamafaq"
+        android:layout_width="80dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="250dp"
+        android:fontFamily="@font/readex_boldd"
+        android:text="Nama "
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imgbtn_emailfaq"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/bg_inputfaq"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textnamafaq"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="100dp"
+        android:contentDescription="Background input"/>
+
+    <EditText
+        android:id="@+id/editTextemailfaq"
+        android:layout_width="330dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="1dp"
+        android:fontFamily="@font/readexpro_light"
+        android:hint="email anda"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintStart_toStartOf="@id/imgbtn_namafaq"
+        app:layout_constraintTop_toTopOf="@id/imgbtn_emailfaq" />
+
+    <!-- Background for EditText 3 (bg_ulasan) -->
+    <TextView
+        android:id="@+id/textpertanyaanfaq"
+        android:layout_width="188dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="435dp"
+        android:fontFamily="@font/readex_boldd"
+        android:text="Kategori Pertanyaan"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imgbtn_katpertfaq"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/bg_inputfaq"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textnamafaq"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="195dp"
+        android:contentDescription="Background input"/>
+
+    <EditText
+        android:id="@+id/editTextKatPertnyaanfaq"
+        android:layout_width="330dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="186dp"
+        android:fontFamily="@font/readexpro_light"
+        android:hint="Kategori Pertanyaan"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintStart_toStartOf="@id/imgbtn_katpertfaq"
+        app:layout_constraintTop_toTopOf="@id/imgbtn_namafaq" />
+
+    <!-- Background for EditText 4 (bg_ulasan) -->
+    <TextView
+        android:id="@+id/textdesk_faq"
+        android:layout_width="188dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="525dp"
+        android:fontFamily="@font/readex_boldd"
+        android:text="Deskripsi Pertanyaan"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imgbtn_deskfaq"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/bg_deskripsiformfaq"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textnamafaq"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="290dp"
+        android:contentDescription="Background input"/>
+
+    <EditText
+        android:id="@+id/editTextDeskfaq"
+        android:layout_width="330dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="280dp"
+        android:fontFamily="@font/readexpro_light"
+        android:hint="Deskripsi Pertanyaan"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintStart_toStartOf="@id/imgbtn_deskfaq"
+        app:layout_constraintTop_toTopOf="@id/imgbtn_namafaq" />
+
+    <!--button kirim!-->
+    <ImageButton
+        android:id="@+id/btnkirimfaq"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/button_kirimfaq"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textnamafaq"
+        android:layout_marginStart="145dp"
+        android:layout_marginTop="455dp"
+        android:contentDescription="Background input"/>
+
+    <TextView
+        android:id="@+id/textkirimfaq"
+        android:layout_width="188dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="735dp"
+        android:fontFamily="@font/readex_boldd"
+        android:text="Kirim FAQ"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
