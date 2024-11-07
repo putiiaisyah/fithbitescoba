@@ -1,112 +1,105 @@
 package com.example.coba;
 
-import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import androidx.annotation.Nullable;
+
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    // Nama database dan versi
-    private static final String DATABASE_NAME = "UserDB";
-    private static final int DATABASE_VERSION = 1;
+    public static final String TABLE_USERS = "users";
+    public static final String COLUMN_ID = "id";
+    public static final String COLUMN_USERNAME = "username";
+    public static final String COLUMN_PASSWORD = "password";
+    public static final String COLUMN_EMAIL = "email";
+    public static final String COLUMN_ADDRESS = "address";
+    public static final String COLUMN_PHONE = "phone";
 
-    // Nama tabel dan kolom
-    private static final String TABLE_USERS = "users";
-    private static final String COLUMN_ID = "id";
-    private static final String COLUMN_USERNAME = "username";
-    private static final String COLUMN_EMAIL = "email";
-    private static final String COLUMN_PASSWORD = "password";
+    private static final String DATABASE_NAME = "userDatabase.db";
+    private static final int DATABASE_VERSION = 2; // Update versi database
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
+    public DatabaseHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+        super(context, name, factory, version);
+    }
+
     @Override
     public void onCreate(SQLiteDatabase db) {
-        // Query untuk membuat tabel
-        String CREATE_USERS_TABLE = "CREATE TABLE " + TABLE_USERS + "("
-                + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + COLUMN_USERNAME + " TEXT, "
-                + COLUMN_EMAIL + " TEXT, "
-                + COLUMN_PASSWORD + " TEXT"
-                + ")";
-        db.execSQL(CREATE_USERS_TABLE);
+        String createTable = "CREATE TABLE " + TABLE_USERS + " (" +
+                COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_USERNAME + " TEXT UNIQUE, " +
+                COLUMN_PASSWORD + " TEXT, " + // Kolom password
+                COLUMN_EMAIL + " TEXT, " +    // Kolom email
+                COLUMN_ADDRESS + " TEXT, " +   // Kolom alamat
+                COLUMN_PHONE + " TEXT)";       // Kolom nomor telepon
+        db.execSQL(createTable);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // Hapus tabel jika ada perubahan versi
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_USERS);
         onCreate(db);
     }
 
-    // Tambah pengguna baru
-    public boolean addUser(String username, String email, String password) {
+    // Menambahkan pengguna baru
+    public boolean addUser(String username, String password) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COLUMN_USERNAME, username);
-        values.put(COLUMN_EMAIL, email);
         values.put(COLUMN_PASSWORD, password);
 
-        long result = db.insert(TABLE_USERS, null, values);
+        long result = db.insert(TABLE_USERS, null, values); // Menyimpan data
         db.close();
-
-        return result != -1; // return true jika berhasil
+        return result != -1; // Mengembalikan true jika berhasil, false jika gagal
     }
 
-    // Update hanya kolom username dan email
-    public boolean updateUser(int id, String username, String email) {
+    // Memverifikasi pengguna
+    public boolean checkUser(String username, String password) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] columns = {COLUMN_ID};
+        String selection = COLUMN_USERNAME + " = ? AND " + COLUMN_PASSWORD + " = ?";
+        String[] selectionArgs = {username, password};
+
+        Cursor cursor = db.query(TABLE_USERS, columns, selection, selectionArgs, null, null, null);
+        int count = cursor.getCount();
+        cursor.close();
+        return count > 0; // Kembali true jika pengguna ditemukan
+    }
+
+    // Cek apakah username sudah ada
+    public boolean isUsernameExists(String username) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] columns = {COLUMN_ID};
+        String selection = COLUMN_USERNAME + " = ?";
+        String[] selectionArgs = {username};
+
+        Cursor cursor = db.query(TABLE_USERS, columns, selection, selectionArgs, null, null, null);
+        int count = cursor.getCount();
+        cursor.close();
+        return count > 0; // Kembali true jika username sudah ada
+    }
+
+    // Menyimpan atau memperbarui profil pengguna
+    public boolean saveProfile(String username, String email, String address, String phone) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COLUMN_USERNAME, username);
         values.put(COLUMN_EMAIL, email);
+        values.put(COLUMN_ADDRESS, address);
+        values.put(COLUMN_PHONE, phone);
 
-        int result = db.update(TABLE_USERS, values, COLUMN_ID + " = ?", new String[]{String.valueOf(id)});
+        // Update data berdasarkan username
+        String selection = COLUMN_USERNAME + " = ?";
+        String[] selectionArgs = {username};
+
+        int count = db.update(TABLE_USERS, values, selection, selectionArgs);
         db.close();
-
-        return result > 0; // return true jika update berhasil
-    }
-
-    // Cek apakah pengguna ada berdasarkan username dan password
-    public boolean checkUser(String username, String password) {
-        SQLiteDatabase db = this.getReadableDatabase();
-        String query = "SELECT * FROM " + TABLE_USERS + " WHERE " +
-                COLUMN_USERNAME + "=? AND " + COLUMN_PASSWORD + "=?";
-
-        Cursor cursor = db.rawQuery(query, new String[]{username, password});
-        boolean exists = cursor.getCount() > 0;
-        cursor.close();
-        db.close();
-
-        return exists; // return true jika ada
-    }
-
-    @SuppressLint("Range")
-    public User getUserById(int id) {
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = null;
-        User user = null;
-
-        try {
-            cursor = db.query(TABLE_USERS, new String[]{COLUMN_ID, COLUMN_USERNAME, COLUMN_EMAIL},
-                    COLUMN_ID + "=?", new String[]{String.valueOf(id)}, null, null, null);
-
-            if (cursor != null && cursor.moveToFirst()) {
-                user = new User();
-                user.setId(cursor.getInt(cursor.getColumnIndex(COLUMN_ID)));
-                user.setUsername(cursor.getString(cursor.getColumnIndex(COLUMN_USERNAME)));
-                user.setEmail(cursor.getString(cursor.getColumnIndex(COLUMN_EMAIL)));
-                // Password tidak perlu dikembalikan untuk tujuan edit profile
-            }
-        } finally {
-            if (cursor != null) {
-                cursor.close(); // Pastikan kursor ditutup
-            }
-            db.close(); // Pastikan database ditutup
-        }
-        return user; // Kembalikan objek pengguna atau null jika tidak ditemukan
+        return count > 0; // Kembali true jika ada yang diupdate
     }
 }
