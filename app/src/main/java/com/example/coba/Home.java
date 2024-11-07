@@ -35,7 +35,7 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Aksi ketika tombol "Lihat selengkapnya" pertama ditekan
-                Intent intent = new Intent(Home.this, DetailActivity.class);
+                Intent intent = new Intent(Home.this, DetailArtikel.class);
                 intent.putExtra("newsId", 1); // Kirim ID berita pertama
                 intent.putExtra("IMAGE_RESOURCE", R.drawable.berita1); // Kirim gambar untuk berita pertama
                 startActivity(intent);
@@ -47,7 +47,7 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Aksi ketika tombol "Lihat selengkapnya" kedua ditekan
-                Intent intent = new Intent(Home.this, DetailActivity.class);
+                Intent intent = new Intent(Home.this, DetailArtikel.class);
                 intent.putExtra("newsId", 2); // Kirim ID berita kedua
                 intent.putExtra("IMAGE_RESOURCE", R.drawable.berita2); // Kirim gambar untuk berita kedua
                 startActivity(intent);
@@ -59,7 +59,7 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Aksi ketika ikon keranjang ditekan
-                Intent intent = new Intent(Home.this, keranjangActivity.class);
+                Intent intent = new Intent(Home.this, Keranjang.class);
                 startActivity(intent);
             }
         });
