@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PakanIkan">
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search_view"
+        android:layout_width="283dp"
+        android:layout_height="48dp"
+        android:background="@drawable/search3"
+        android:drawableStart="@drawable/search"
+        android:drawablePadding="8dp"
+        android:fontFamily="@font/readexpro_medium"
+        android:hint="Search"
+        android:inputType="text"
+        android:padding="11dp"
+        android:textSize="15sp"
+        tools:layout_editor_absoluteX="28dp"
+        tools:layout_editor_absoluteY="40dp"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/iconCart"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="328dp"
+        android:layout_marginTop="38dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="Ikon keranjang belanja"
+        android:scaleType="fitCenter"
+        android:src="@drawable/card"
+        android:padding="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textkategori"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/readex_boldd"
+        android:text="Kategori"
+        android:textColor="@color/ijo"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="123dp">
+
+        <!-- Gambar Kategori 1 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <!-- Background -->
+                <ImageButton
+                    android:id="@+id/bgtawarkategori"
+                    android:layout_width="70dp"
+                    android:layout_height="80dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="bg air tawar"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/bg_kategoriikan" />
+
+                <!-- Gambar Ikan di atas background -->
+                <ImageButton
+                    android:id="@+id/buttontawarkategori"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/ikan_tawarku"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ikan_tawar" />
+            </FrameLayout>
+
+            <!-- Teks di bawah gambar ikan -->
+            <TextView
+                android:id="@+id/texttawarkategori"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/readexpro_medium"
+                android:gravity="center"
+                android:text="Ikan Air Tawar"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <!-- Gambar Kategori 2 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"> <!-- Margin ditambahkan -->
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <!-- Background -->
+                <ImageButton
+                    android:id="@+id/bglautkategori"
+                    android:layout_width="70dp"
+                    android:layout_height="80dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="bg ikan air laut"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/bg_kategoriikan" />
+
+                <ImageButton
+                    android:id="@+id/buttonlautkategori"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="gmbr ikan laut"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ikan_laut" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/textlautkategori"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/readexpro_medium"
+                android:gravity="center"
+                android:text="Ikan Air Laut"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <!-- Gambar Kategori 3 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <!-- Background -->
+                <ImageButton
+                    android:id="@+id/bgpakankategori"
+                    android:layout_width="70dp"
+                    android:layout_height="80dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="bg pakan"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/hover_kategori" />
+
+                <!-- Gambar Ikan di atas background -->
+                <ImageButton
+                    android:id="@+id/buttonpakankategori"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="bg kategori pakan"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/pakan" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/textpakankategori"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/readexpro_medium"
+                android:gravity="center"
+                android:text="Pakan Ikan"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <!-- Gambar Kategori 4 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"> <!-- Margin ditambahkan -->
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <!-- Background -->
+                <ImageButton
+                    android:id="@+id/bgbibitkategori"
+                    android:layout_width="70dp"
+                    android:layout_height="80dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="bg bibit ikan"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/bg_kategoriikan" />
+
+                <ImageButton
+                    android:id="@+id/buttonbibitkategori"
+                    android:layout_width="73dp"
+                    android:layout_height="69dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/bibit_ikan_description"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/bibit_ikan" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/textbibitkategori"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/readexpro_medium"
+                android:gravity="center"
+                android:text="Pembibitan Ikan"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textsemuakategori"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="250dp"
+        android:fontFamily="@font/readex_boldd"
+        android:text="Semua Produk"
+        android:textColor="@color/ijo"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="280dp"
+        android:contentDescription="scroll_view">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--produk 1 !-->
+
+            <ImageButton
+                android:id="@+id/imgbuttonpakanproduk"
+                android:layout_width="160dp"
+                android:layout_height="190dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="bg produk"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_produkkategori" />
+
+
+            <ImageView
+                android:id="@+id/imgviewpakanproduk"
+                android:layout_width="120dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="-177dp"
+                android:layout_marginStart="40dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/pakan1" />
+
+            <TextView
+                android:id="@+id/textnamaprodukpakan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="-1dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/readexpro_medium"
+                android:text="Takari Pakan" />
+
+            <TextView
+                android:id="@+id/texthargaprodukpakan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="-3dp"
+                android:fontFamily="@font/readexpro_light"
+                android:text="Rp 45.000/kg"
+                android:textSize="12sp" />
+
+            <ImageButton
+                android:id="@+id/btnkeranjangpakan"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="-20dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Ikon keranjang belanja"
+                android:padding="10dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/card" />
+
+            <!--produk 1 selesai !-->
+
+
+
+            <!--produk 2!-->
+            <ImageButton
+                android:id="@+id/imgbuttonpakanproduk2"
+                android:layout_width="160dp"
+                android:layout_height="190dp"
+                android:layout_marginStart="200dp"
+                android:layout_marginTop="-190dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="bg produk"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_produkkategori" />
+
+            <ImageView
+                android:id="@+id/imgviewpakanproduk2"
+                android:layout_width="120dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="-177dp"
+                android:layout_marginStart="220dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/pakan2" />
+
+            <TextView
+                android:id="@+id/textnamaprodukpakan2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="220dp"
+                android:layout_marginTop="-1dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/readexpro_medium"
+                android:text="Seaweed" />
+
+            <TextView
+                android:id="@+id/texthargaprodukpakan2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="220dp"
+                android:layout_marginTop="-3dp"
+                android:fontFamily="@font/readexpro_light"
+                android:text="Rp 45.000/kg"
+                android:textSize="12sp" />
+
+            <ImageButton
+                android:id="@+id/btnkeranjangpakan2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="300dp"
+                android:layout_marginTop="-20dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Ikon keranjang belanja"
+                android:padding="10dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/card"/>
+            <!--produk 2 selesai !-->
+
+
+
+
+            <!--produk 3!-->
+            <ImageButton
+                android:id="@+id/imgbuttonpakanproduk3"
+                android:layout_width="160dp"
+                android:layout_height="190dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="bg produk"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_produkkategori" />
+
+            <ImageView
+                android:id="@+id/imgviewpakanproduk3"
+                android:layout_width="120dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="-177dp"
+                android:layout_marginStart="40dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/pakan3" />
+
+            <TextView
+                android:id="@+id/textnamaprodukpakan3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="-1dp"
+                android:fontFamily="@font/readexpro_medium"
+                android:text="Pakan Gurame" />
+
+            <TextView
+                android:id="@+id/texthargaprodukpakan3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="-3dp"
+                android:fontFamily="@font/readexpro_light"
+                android:text="Rp 45.000/kg"
+                android:textSize="12sp" />
+
+            <ImageButton
+                android:id="@+id/btnkeranjangpakan3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="-20dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Ikon keranjang belanja"
+                android:padding="10dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/card"/>
+            <!--produk 3 selesai !-->
+
+
+            <!--produk 4 !-->
+            <ImageButton
+                android:id="@+id/imgbuttonpakanproduk4"
+                android:layout_width="160dp"
+                android:layout_height="190dp"
+                android:layout_marginStart="200dp"
+                android:layout_marginTop="-185dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="bg produk"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_produkkategori" />
+
+            <ImageView
+                android:id="@+id/imgviewpakanproduk4"
+                android:layout_width="120dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="220dp"
+                android:layout_marginTop="-177dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/pakan4" />
+
+            <TextView
+                android:id="@+id/textnamaprodukpakan4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="220dp"
+                android:layout_marginTop="-1dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/readexpro_medium"
+                android:text="Marine's" />
+
+            <TextView
+                android:id="@+id/texthargaprodukpakan4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="220dp"
+                android:layout_marginTop="-3dp"
+                android:fontFamily="@font/readexpro_light"
+                android:text="Rp 45.000/kg"
+                android:textSize="12sp" />
+
+            <ImageButton
+                android:id="@+id/btnkeranjangpakan4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="300dp"
+                android:layout_marginTop="-20dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Ikon keranjang belanja"
+                android:padding="10dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/card" />
+            <!--produk 4 selesai !-->
+
+
+
+            <!--produk 5!-->
+            <ImageButton
+                android:id="@+id/imgbuttonpakanproduk5"
+                android:layout_width="160dp"
+                android:layout_height="190dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="bg produk"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_produkkategori" />
+
+            <ImageView
+                android:id="@+id/imgviewpakanproduk5"
+                android:layout_width="120dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="-177dp"
+                android:layout_marginStart="40dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/pakan5" />
+
+            <TextView
+                android:id="@+id/textnamaprodukpakan5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="-1dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/readexpro_medium"
+                android:text="Pakan air tawar" />
+
+            <TextView
+                android:id="@+id/texthargaproduktawar5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="-3dp"
+                android:fontFamily="@font/readexpro_light"
+                android:text="Rp 45.000/kg"
+                android:textSize="12sp" />
+
+            <ImageButton
+                android:id="@+id/btnkeranjanglaut5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="-20dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Ikon keranjang belanja"
+                android:padding="10dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/card" />
+            <!--produk 5 selesai !-->
+
+
+
+            <!--produk 6 !-->
+            <ImageButton
+                android:id="@+id/imgbuttonpakanproduk6"
+                android:layout_width="160dp"
+                android:layout_height="190dp"
+                android:layout_marginStart="200dp"
+                android:layout_marginTop="-185dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="bg produk"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_produkkategori" />
+
+            <ImageView
+                android:id="@+id/imgviewpakanproduk6"
+                android:layout_width="120dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="220dp"
+                android:layout_marginTop="-177dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/pakan6" />
+
+            <TextView
+                android:id="@+id/textnamaproduklaut6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="220dp"
+                android:layout_marginTop="-1dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/readexpro_medium"
+                android:text="Pakan Lele" />
+
+            <TextView
+                android:id="@+id/texthargaprodukpakan6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="220dp"
+                android:layout_marginTop="-3dp"
+                android:fontFamily="@font/readexpro_light"
+                android:text="Rp 45.000/kg"
+                android:textSize="12sp" />
+
+            <ImageButton
+                android:id="@+id/btnkeranjangpakan6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="300dp"
+                android:layout_marginTop="-20dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Ikon keranjang belanja"
+                android:padding="10dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/card" />
+            <!--produk 6 selesai !-->
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:menu="@menu/bottom_navigasi"
+        app:itemIconTint="@color/ijo"
+        app:itemTextColor="@color/ijo"
+        app:labelVisibilityMode="labeled"
+        app:backgroundTint="@color/white"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
