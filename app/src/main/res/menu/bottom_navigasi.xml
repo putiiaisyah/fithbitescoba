@@ -6,12 +6,13 @@
         android:icon="@drawable/button_home"
         android:title="Home" />
     <item
-        android:id="@+id/nav_kategori"
+        android:id="@+id/nav_artikel"
         android:icon="@drawable/artikel"
         android:title="Kategori" />
     <item
         android:id="@+id/nav_profil"
         android:icon="@drawable/profile"
         android:title="Profil" />
+
 
 </menu>

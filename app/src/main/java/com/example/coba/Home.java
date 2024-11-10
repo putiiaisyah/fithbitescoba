@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,7 +24,7 @@ public class Home extends AppCompatActivity {
     private Button lihatSelengkapnya1, lihatSelengkapnya2, btnkirimfaq_home;
     private ImageButton imgbtnkategoritawar, imgbtnkategorilaut, imgbtnkategoripakan, imgbtnkategoribibit;
     private ImageView iconCart, iconProfile;
-    private BottomNavigationView bottomNavigationView;
+    private BottomNavigationView bottomNavigationView1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +41,7 @@ public class Home extends AppCompatActivity {
         imgbtnkategoripakan = findViewById(R.id.imgbtnkategoripakan);
         imgbtnkategoribibit = findViewById(R.id.imgbtnkategoribibit);
         btnkirimfaq_home = findViewById(R.id.btnkirimfaq_home);
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        BottomNavigationView bottomNavigationView1 = findViewById(R.id.bottom_navigation);
         iconCart = findViewById(R.id.iconCart);
         iconProfile = findViewById(R.id.iconProfile);
 
@@ -83,7 +84,7 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Aksi ketika ikon profil ditekan
-                Intent intent = new Intent(Home.this, EditProfile.class);
+                Intent intent = new Intent(Home.this, Profile.class);
                 startActivity(intent);
             }
         });
@@ -141,6 +142,30 @@ public class Home extends AppCompatActivity {
             }
         });
 
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+
+        bottomNavigationView1.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (item.getItemId() == R.id.nav_home) {
+                    Toast.makeText(Home.this, "Store selected", Toast.LENGTH_SHORT).show();
+//                    bottomNavigationView.setSelectedItemId(R.id.menu_store);
+                    return true;
+                } else if (item.getItemId() == R.id.nav_artikel) {
+                    Intent intent = new Intent(Home.this, DetailArtikel.class);
+
+                    startActivity(intent);
+                    return true;
+                } else if (item.getItemId() == R.id.nav_profil) {
+                    Intent intent = new Intent(Home.this, Profile.class);
+                    startActivity(intent);
+//                    bottomNavigationView.setSelectedItemId(R.id.menu_profile);
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        });
 
     }
 }

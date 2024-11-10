@@ -1,32 +1,27 @@
 package com.example.coba;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
-
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.ImageButton;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Keranjang extends AppCompatActivity {
-    private ImageButton backbutton;
+    private ImageButton btnBack;
     private int productQuantity = 1; // Jumlah produk awal
     private TextView texthargakeranjang; // TextView untuk harga
 
-
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_keranjang);
 
         // Inisialisasi komponen UI
+        btnBack = findViewById(R.id.backbutton); // Inisialisasi tombol back
         ImageButton minusButton = findViewById(R.id.icminus_keranjang);
         ImageButton plusButton = findViewById(R.id.icplus_keranjang);
         ImageButton deleteButton = findViewById(R.id.imgDelete);
@@ -38,6 +33,14 @@ public class Keranjang extends AppCompatActivity {
         productName.setText("Ikan Tuna");
         productLocation.setText("Jakarta Timur");
         updatePrice(); // Perbarui harga sesuai dengan jumlah produk
+
+        // Fungsi untuk tombol back
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish(); // Menutup activity ini dan kembali ke activity sebelumnya
+            }
+        });
 
         // Fungsi untuk tombol minus
         minusButton.setOnClickListener(new View.OnClickListener() {
@@ -65,9 +68,7 @@ public class Keranjang extends AppCompatActivity {
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Logika untuk menghapus item dari keranjang
                 Toast.makeText(Keranjang.this, "Item berhasil dihapus dari keranjang", Toast.LENGTH_SHORT).show();
-                // Kembali ke halaman sebelumnya atau melakukan tindakan lain
                 finish(); // Mengakhiri activity ini
             }
         });
@@ -79,9 +80,4 @@ public class Keranjang extends AppCompatActivity {
         int totalPrice = productQuantity * pricePerItem; // Total harga
         texthargakeranjang.setText("Rp " + totalPrice); // Update TextView harga
     }
-
-
-
-
-
 }

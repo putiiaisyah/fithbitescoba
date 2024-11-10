@@ -7,273 +7,290 @@
     android:layout_height="match_parent"
     tools:context=".Kategori">
 
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/search_view"
-            android:layout_width="283dp"
-            android:layout_height="48dp"
-            android:background="@drawable/search3"
-            android:drawableStart="@drawable/search"
-            android:drawablePadding="8dp"
-            android:fontFamily="@font/readexpro_medium"
-            android:hint="Search"
-            android:inputType="text"
-            android:padding="11dp"
-            android:textSize="15sp"
-            tools:layout_editor_absoluteX="28dp"
-            tools:layout_editor_absoluteY="40dp"
-            tools:ignore="MissingConstraints" />
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search_view"
+        android:layout_width="283dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="30dp"
+        android:background="@drawable/search3"
+        android:drawableStart="@drawable/search"
+        android:drawablePadding="8dp"
+        android:fontFamily="@font/readexpro_medium"
+        android:hint="Search"
+        android:inputType="text"
+        android:padding="11dp"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageButton
-            android:id="@+id/iconCart"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="328dp"
-            android:layout_marginTop="38dp"
-            android:background="@android:color/transparent"
-            android:contentDescription="Ikon keranjang belanja"
-            android:scaleType="fitCenter"
-            android:src="@drawable/card"
-            android:padding="8dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <!-- Cart Icon -->
+    <ImageButton
+        android:id="@+id/iconCart"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="328dp"
+        android:layout_marginTop="38dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="Ikon keranjang belanja"
+        android:scaleType="fitCenter"
+        android:src="@drawable/card"
+        android:padding="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textviewkategori"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="100dp"
-            android:fontFamily="@font/readex_boldd"
-            android:text="Kategori"
-            android:textColor="@color/ijo"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <!-- Kategori Text -->
+    <TextView
+        android:id="@+id/textviewkategori"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/readex_boldd"
+        android:text="Kategori"
+        android:textColor="@color/ijo"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_view" />
 
+
+    <!-- ScrollView to contain Category Images and Products -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/textviewkategori"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Linear Layout for Categories -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="horizontal"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="123dp">
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
 
-            <!-- Gambar Kategori 1 -->
+            <!-- Linear Layout for Category Images -->
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
+                android:gravity="center"
+                android:layout_marginBottom="130dp"
+                android:layout_marginTop="130dp">
 
-                <FrameLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <!-- Background -->
-                    <ImageButton
-                        android:id="@+id/bgbuttonikantawar"
-                        android:layout_width="70dp"
-                        android:layout_height="80dp"
-                        android:background="@android:color/transparent"
-                        android:contentDescription="bg air tawar"
-                        android:scaleType="centerCrop"
-                        app:srcCompat="@drawable/bg_kategoriikan" />
-
-                    <!-- Gambar Ikan di atas background -->
-                    <ImageButton
-                        android:id="@+id/imageikantawar"
-                        android:layout_width="55dp"
-                        android:layout_height="55dp"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="5dp"
-                        android:background="@android:color/transparent"
-                        android:contentDescription="@string/ikan_tawarku"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/ikan_tawar" />
-                </FrameLayout>
-
-                <!-- Teks di bawah gambar ikan -->
-                <TextView
-                    android:id="@+id/textikantawar"
-                    android:layout_width="wrap_content"
+                <!-- Category 1: Ikan Air Tawar -->
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:fontFamily="@font/readexpro_medium"
-                    android:gravity="center"
-                    android:text="Ikan Air Tawar"
-                    android:textSize="10sp" />
-            </LinearLayout>
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp">
 
-            <!-- Gambar Kategori 2 -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:orientation="vertical"> <!-- Margin ditambahkan -->
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
 
-                <FrameLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                        <ImageButton
+                            android:id="@+id/bgbuttonikantawar"
+                            android:layout_width="70dp"
+                            android:layout_height="80dp"
+                            android:background="@android:color/transparent"
+                            android:scaleType="centerCrop"
+                            android:contentDescription="bg button ikan tawar"
+                            app:srcCompat="@drawable/bg_kategoriikan" />
 
-                    <!-- Background -->
-                    <ImageButton
-                        android:id="@+id/bgbuttonikanlaut"
-                        android:layout_width="70dp"
-                        android:layout_height="80dp"
-                        android:background="@android:color/transparent"
-                        android:contentDescription="bg ikan air laut"
-                        android:scaleType="centerCrop"
-                        app:srcCompat="@drawable/bg_kategoriikan" />
+                        <ImageButton
+                            android:id="@+id/imageikantawar"
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="5dp"
+                            android:contentDescription="img ikan air tawar"
+                            android:background="@android:color/transparent"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ikan_tawar" />
+                    </FrameLayout>
 
-                    <ImageButton
-                        android:id="@+id/imageikanlaut"
-                        android:layout_width="55dp"
-                        android:layout_height="55dp"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="5dp"
-                        android:background="@android:color/transparent"
-                        android:contentDescription="gmbr ikan laut"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/ikan_laut" />
-                </FrameLayout>
+                    <TextView
+                        android:id="@+id/textikantawar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/readexpro_medium"
+                        android:gravity="center"
+                        android:text="Ikan Air Tawar"
+                        android:textSize="10sp" />
+                </LinearLayout>
 
-                <TextView
-                    android:id="@+id/textikanlaut"
-                    android:layout_width="wrap_content"
+                <!-- Category 2: Ikan Air Laut -->
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:fontFamily="@font/readexpro_medium"
-                    android:gravity="center"
-                    android:text="Ikan Air Laut"
-                    android:textSize="10sp" />
-            </LinearLayout>
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
 
-            <!-- Gambar Kategori 3 -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
 
-                <FrameLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                        <ImageButton
+                            android:id="@+id/bgbuttonikanlaut"
+                            android:layout_width="70dp"
+                            android:layout_height="80dp"
+                            android:background="@android:color/transparent"
+                            android:contentDescription="bg ikan air laut"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/bg_kategoriikan" />
 
-                    <!-- Background -->
-                    <ImageButton
-                        android:id="@+id/bgbuttonpakanikan"
-                        android:layout_width="70dp"
-                        android:layout_height="80dp"
-                        android:background="@android:color/transparent"
-                        android:contentDescription="bg pakan"
-                        android:scaleType="centerCrop"
-                        app:srcCompat="@drawable/bg_kategoriikan" />
+                        <ImageButton
+                            android:id="@+id/imageikanlaut"
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="5dp"
+                            android:background="@android:color/transparent"
+                            android:contentDescription="gmbr ikan laut"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ikan_laut" />
+                    </FrameLayout>
 
-                    <!-- Gambar Ikan di atas background -->
-                    <ImageButton
-                        android:id="@+id/imagepakanikan"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="5dp"
-                        android:background="@android:color/transparent"
-                        android:contentDescription="bg kategori pakan"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/pakan" />
-                </FrameLayout>
+                    <TextView
+                        android:id="@+id/textikanlaut"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/readexpro_medium"
+                        android:gravity="center"
+                        android:text="Ikan Air Laut"
+                        android:textSize="10sp" />
+                </LinearLayout>
 
-                <TextView
-                    android:id="@+id/textpakanikan"
-                    android:layout_width="wrap_content"
+                <!-- Category 3: Pakan Ikan -->
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:fontFamily="@font/readexpro_medium"
-                    android:gravity="center"
-                    android:text="Pakan Ikan"
-                    android:textSize="10sp" />
-            </LinearLayout>
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
 
-            <!-- Gambar Kategori 4 -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:orientation="vertical"> <!-- Margin ditambahkan -->
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
 
-                <FrameLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                        <ImageButton
+                            android:id="@+id/bgbuttonpakanikan"
+                            android:layout_width="70dp"
+                            android:layout_height="80dp"
+                            android:background="@android:color/transparent"
+                            android:contentDescription="bg pakan"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/bg_kategoriikan" />
 
-                    <!-- Background -->
-                    <ImageButton
-                        android:id="@+id/bgbuttonbibitikan"
-                        android:layout_width="70dp"
-                        android:layout_height="80dp"
-                        android:background="@android:color/transparent"
-                        android:contentDescription="bg bibit ikan"
-                        android:scaleType="centerCrop"
-                        app:srcCompat="@drawable/bg_kategoriikan" />
+                        <ImageButton
+                            android:id="@+id/imagepakanikan"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="5dp"
+                            android:background="@android:color/transparent"
+                            android:contentDescription="bg kategori pakan"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/pakan" />
+                    </FrameLayout>
 
-                    <ImageButton
-                        android:id="@+id/imagebibitikan"
-                        android:layout_width="73dp"
-                        android:layout_height="69dp"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="5dp"
-                        android:background="@android:color/transparent"
-                        android:contentDescription="@string/bibit_ikan_description"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/bibit_ikan" />
-                </FrameLayout>
+                    <TextView
+                        android:id="@+id/textpakanikan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/readexpro_medium"
+                        android:gravity="center"
+                        android:text="Pakan Ikan"
+                        android:textSize="10sp" />
+                </LinearLayout>
 
-                <TextView
-                    android:id="@+id/textbibitikan"
-                    android:layout_width="wrap_content"
+                <!-- Category 4: Pembibitan Ikan -->
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:fontFamily="@font/readexpro_medium"
-                    android:gravity="center"
-                    android:text="Pembibitan Ikan"
-                    android:textSize="10sp" />
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
 
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageButton
+                            android:id="@+id/bgbuttonbibitikan"
+                            android:layout_width="70dp"
+                            android:layout_height="80dp"
+                            android:background="@android:color/transparent"
+                            android:contentDescription="bg bibit ikan"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/bg_kategoriikan" />
+
+                        <ImageButton
+                            android:id="@+id/imagebibitikan"
+                            android:layout_width="73dp"
+                            android:layout_height="69dp"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="5dp"
+                            android:background="@android:color/transparent"
+                            android:contentDescription="bg bibit ikan"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/bibit_ikan" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/textbibitikan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/readexpro_medium"
+                        android:gravity="center"
+                        android:text="Pembibitan Ikan"
+                        android:textSize="10sp" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
+    </ScrollView>
 
-        <TextView
-            android:id="@+id/textsemuaproduk"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="250dp"
-            android:fontFamily="@font/readex_boldd"
-            android:text="Semua Produk"
-            android:textColor="@color/ijo"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Semua Produk Text -->
+    <TextView
+        android:id="@+id/textsemuaproduk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="130dp"
+        android:fontFamily="@font/readex_boldd"
+        android:text="Semua Produk"
+        android:textColor="@color/ijo"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textviewkategori" />
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="280dp"
+            android:layout_marginTop="300dp"
             android:contentDescription="scroll_view">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
 
                 <!--produk 1!-->
                 <ImageButton

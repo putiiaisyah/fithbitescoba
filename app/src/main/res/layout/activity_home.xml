@@ -488,8 +488,6 @@
             app:labelVisibilityMode="labeled"
             app:backgroundTint="@color/white" />
 
-
-
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
