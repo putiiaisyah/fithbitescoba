@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RincianPesanan">
+
+    <ImageButton
+        android:id="@+id/backbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:padding="16dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="30dp"
+        android:contentDescription="Back Button"
+        android:minHeight="48dp"
+        android:minWidth="48dp" />
+
+    <TextView
+        android:id="@+id/rangkumanpesanantxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rincian Pesanan"
+        android:textColor="@color/ijo"
+        android:fontFamily="@font/readex_boldd"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/backbutton"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="40dp" />
+
+    <ImageView
+        android:id="@+id/imglogorincianpesanan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo_fishbites"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="90dp" />
+
+    <TextView
+        android:id="@+id/txtfishbitesrincian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/readex_boldd"
+        android:text="Fish Bites"
+        android:textSize="13sp"
+        android:textColor="@color/ijo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="95dp"
+        android:layout_marginTop="110dp" />
+
+    <TextView
+        android:id="@+id/txttanggalrincian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/readexpro_medium"
+        android:text="22 Oktober 2024"
+        android:textColor="@color/ijo"
+        android:textSize="10sp"
+        android:layout_marginTop="110dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="280dp" />
+
+    <TextView
+        android:id="@+id/txtpesananselesai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/readexpro_medium"
+        android:text="Pesanan Selesai"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        android:layout_marginStart="260dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="130dp" />
+
+    <TextView
+        android:id="@+id/txtalamatpengiriman"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alamat Pengiriman"
+        android:textSize="16dp"
+        android:fontFamily="@font/readex_boldd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="170dp"
+        android:layout_marginStart="30dp"/>
+
+    <TextView
+        android:id="@+id/txtnamarincianpesanan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Adinda Rahmawati"
+        android:fontFamily="@font/readexpro_light"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="200dp"/>
+
+    <TextView
+        android:id="@+id/txtalamatnotelp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="08123456789\nGriya Sawangan Asri, No 24, Rt.8/Rw9, Bubulak, Kota Bogor, Jawa Barat, ID 16511"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="220dp"/>
+
+    <ImageView
+        android:id="@+id/imggarisrincianatas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/garis"
+        android:layout_marginTop="290dp"
+        android:layout_marginEnd="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtdetailpesanan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Detail Pesanan"
+        android:layout_marginTop="300dp"
+        android:layout_marginEnd="210dp"
+        android:textSize="16dp"
+        android:fontFamily="@font/readex_boldd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_detail_pesanan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="340dp">
+
+        <ImageView
+            android:id="@+id/bgdetailpesanan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:src="@drawable/bgrincianpesanan"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <ImageView
+            android:id="@+id/imgdetailpesanan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="20dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ikan_gurame"
+            app:layout_constraintTop_toTopOf="@+id/bgdetailpesanan"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/txtnamadetailpesanan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ikan Gurame 1kg"
+            android:textColor="@color/white"
+            android:fontFamily="@font/readexpro_medium"
+            android:layout_marginTop="-60dp"
+            android:layout_marginEnd="90dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgdetailpesanan" />
+
+        <TextView
+            android:id="@+id/txthargadetailpesanan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rp 50.000"
+            android:layout_marginEnd="140dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/readexpro_light"
+            android:textColor="@color/yellow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtnamadetailpesanan" />
+
+        <TextView
+            android:id="@+id/txtbanyakpesanan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X1"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/readexpro_light"
+            android:textColor="@color/yellow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtnamadetailpesanan" />
+
+        <!-- pesanan ke-2 !-->
+
+        <ImageView
+            android:id="@+id/bgdetailpesanan2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="100dp"
+            android:src="@drawable/bgrincianpesanan"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <ImageView
+            android:id="@+id/imgdetailpesanan2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="110dp"
+            android:layout_marginStart="20dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ikan_patin"
+            app:layout_constraintTop_toTopOf="@+id/bgdetailpesanan"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/txtnamadetailpesanan2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ikan Patin Utuh Bersih 1kg"
+            android:textColor="@color/white"
+            android:fontFamily="@font/readexpro_medium"
+            android:layout_marginTop="-60dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgdetailpesanan2" />
+
+        <TextView
+            android:id="@+id/txthargadetailpesanan2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rp 50.000"
+            android:layout_marginEnd="140dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/readexpro_light"
+            android:textColor="@color/yellow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtnamadetailpesanan2" />
+
+        <TextView
+            android:id="@+id/txtbanyakpesanan2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X1"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/readexpro_light"
+            android:textColor="@color/yellow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtnamadetailpesanan2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imggarisrincianbawah"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/garis"
+        android:layout_marginTop="550dp"
+        android:layout_marginEnd="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtdetailpembayaran"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Detail Pembayaran"
+        android:layout_marginTop="560dp"
+        android:layout_marginEnd="170dp"
+        android:textSize="16dp"
+        android:fontFamily="@font/readex_boldd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txtsubtotalpembayaran"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Subtotal Pembayaran"
+            android:layout_marginTop="370dp"
+            android:layout_marginEnd="185dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/txthargasubtotalpembayaran"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rp 82.000"
+            android:layout_marginTop="370dp"
+            android:layout_marginStart="250dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/txtsubtotalpengiriman"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Subtotal Pengiriman"
+            android:layout_marginTop="410dp"
+            android:layout_marginEnd="192dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/txthargapengiriman"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rp 30.000"
+            android:layout_marginTop="410dp"
+            android:layout_marginStart="250dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/txtbiayalayanan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Biaya Layanan"
+            android:layout_marginTop="450dp"
+            android:layout_marginEnd="230dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/txthbiayalayanan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rp 2.000"
+            android:layout_marginTop="450dp"
+            android:layout_marginStart="257dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/txttotalpesanan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Pesanan"
+            android:layout_marginTop="495dp"
+            android:layout_marginEnd="222dp"
+            android:fontFamily="@font/readex_boldd"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/txthargatotalpesanan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rp 114.000"
+            android:textColor="@color/yellow"
+            android:layout_marginTop="497dp"
+            android:layout_marginStart="235dp"
+            android:fontFamily="@font/readex_boldd"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/txtmetodepembayaran"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Metode Pembayaran"
+            android:layout_marginTop="540dp"
+            android:layout_marginEnd="175dp"
+            android:fontFamily="@font/readex_boldd"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/txtbayarpakeapa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BCA"
+            android:textColor="@color/yellow"
+            android:layout_marginTop="540dp"
+            android:layout_marginStart="287dp"
+            android:fontFamily="@font/readex_boldd"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,32 +8,98 @@
     tools:context=".DetailArtikel"
     android:padding="16dp">
 
-    <TextView
-        android:id="@+id/tvDetailTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Judul Berita"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="8dp"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/imageViewDetail"
+    <!-- ScrollView to make content scrollable -->
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/berita1"
-        tools:ignore="MissingConstraints" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tvDetailContent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Isi berita atau informasi detail lainnya akan ditampilkan di sini."
-        android:textSize="16sp"
-        android:layout_marginTop="16dp"
-        tools:ignore="MissingConstraints" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
+            <ImageButton
+                android:id="@+id/backbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:padding="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="30dp"
+                android:contentDescription="Back Button"
+                android:minHeight="48dp"
+                android:minWidth="48dp" />
+
+            <TextView
+                android:id="@+id/judulartikeltxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Riwayat Pembelian"
+                android:textColor="@color/ijo"
+                android:fontFamily="@font/readex_boldd"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@id/backbutton"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="40dp" />
+
+            <ImageView
+                android:id="@+id/imgviewartikeldetail"
+                android:layout_width="266dp"
+                android:layout_height="147dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/judulartikeltxt"
+                android:src="@drawable/cover_artikel" />
+
+            <TextView
+                android:id="@+id/txtsubjudulartikel"
+                android:layout_width="294dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Inovasi budidaya ikan terbaru membantu petani meningkatkan hasil panen!"
+                android:textAlignment="center"
+                android:fontFamily="@font/readex_boldd"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/imgviewartikeldetail"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp" />
+
+            <ImageView
+                android:id="@+id/bgartikeldetail"
+                android:layout_width="354dp"
+                android:layout_height="471dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtsubjudulartikel"
+                android:src="@drawable/bg_artikel_penjelasan" />
+
+            <TextView
+                android:id="@+id/textviewdeskartikel"
+                android:layout_width="321dp"
+                android:layout_height="461dp"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:text="Inovasi dalam budidaya ikan, seperti sistem bioflok dan sensor IoT, telah membantu petani meningkatkan hasil panen dengan lebih efisien. Sistem bioflok menggunakan mikroorganisme untuk menjaga kualitas air, mengurangi frekuensi penggantian air, dan menekan biaya pakan tambahan. Di sisi lain, sensor IoT memungkinkan petani memantau kondisi kolam, termasuk suhu dan kadar oksigen, secara real-time. Hal ini memungkinkan tindakan cepat saat ada perubahan yang berpotensi mengganggu pertumbuhan ikan. Selain itu, metode aquaponik, yang menggabungkan budidaya ikan dan tanaman hidroponik, semakin banyak diterapkan. Limbah ikan dimanfaatkan sebagai nutrisi bagi tanaman, menciptakan sistem yang efisien dan ramah lingkungan. Dengan penerapan teknologi ini, petani dapat meningkatkan produktivitas dan mengurangi risiko kerugian, sekaligus menjalankan usaha budidaya yang lebih berkelanjutan."
+                android:textAlignment="center"
+                android:fontFamily="@font/readexpro_medium"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/bgartikeldetail"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
