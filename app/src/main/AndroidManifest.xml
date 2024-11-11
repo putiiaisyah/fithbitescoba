@@ -16,9 +16,6 @@
             android:name=".RincianPesanan"
             android:exported="false" />
         <activity
-            android:name=".RangkumanPesanan"
-            android:exported="false" />
-        <activity
             android:name=".RiwayatPembelian"
             android:exported="false" />
         <activity
