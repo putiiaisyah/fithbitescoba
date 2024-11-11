@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RiwayatPembelian">
+
+    <ImageButton
+        android:id="@+id/backbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:padding="16dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:contentDescription="Back Button"
+        android:minHeight="48dp"
+        android:minWidth="48dp" />
+
+    <!-- Title Text -->
+    <TextView
+        android:id="@+id/txtviewriwayatpembelian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Riwayat Pembelian"
+        android:textColor="@color/ijo"
+        android:fontFamily="@font/readex_boldd"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/backbutton"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="40dp" />
+
+    <ImageButton
+        android:id="@+id/bgriwayatpembelian"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/bg_riwayat"
+        android:contentDescription="Riwayat Pembelian"
+        app:layout_constraintTop_toBottomOf="@id/txtviewriwayatpembelian"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgviewriwayatpembelian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="130dp"
+        android:contentDescription="Ikan Nila"
+        android:src="@drawable/ikan_nila"
+        android:layout_marginEnd="180dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txttglriwayat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/readexpro_medium"
+        android:text="22 Oktober 2024"
+        android:textColor="@color/ijo"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/imgviewriwayatpembelian"
+        app:layout_constraintTop_toTopOf="@+id/bgriwayatpembelian" />
+
+    <TextView
+        android:id="@+id/txtnamariwayatpembelian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/readexpro_medium"
+        android:text="Ikan Nila"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/imgviewriwayatpembelian"
+        app:layout_constraintTop_toBottomOf="@+id/txttglriwayat" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="45dp"
+        android:fontFamily="@font/readexpro_medium"
+        android:text="Rp.50.000"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/txtnamariwayatpembelian"
+        app:layout_constraintTop_toTopOf="@+id/bgriwayatpembelian" />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

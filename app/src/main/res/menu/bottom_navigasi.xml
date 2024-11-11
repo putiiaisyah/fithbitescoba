@@ -8,7 +8,7 @@
     <item
         android:id="@+id/nav_artikel"
         android:icon="@drawable/artikel"
-        android:title="Kategori" />
+        android:title="Artikel" />
     <item
         android:id="@+id/nav_profil"
         android:icon="@drawable/profile"

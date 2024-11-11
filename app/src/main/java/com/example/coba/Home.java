@@ -1,8 +1,12 @@
 package com.example.coba;
 
+import static android.widget.Toast.makeText;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -14,36 +18,74 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Home extends AppCompatActivity {
-    // Deklarasi variabel untuk elemen UI
+
+    // Deklarasi variabel untuk ImageButton dan BottomNavigationView
+    private ImageButton imgbtnkategoritawar, imgbtnkategorilaut, imgbtnkategoripakan, imgbtnkategoribibit;
+    private BottomNavigationView bottomNavigationView1;
     private TextView tvHelloCasie, tvWelcomeCasie;
     private EditText searchBar;
     private Button lihatSelengkapnya1, lihatSelengkapnya2, btnkirimfaq_home;
-    private ImageButton imgbtnkategoritawar, imgbtnkategorilaut, imgbtnkategoripakan, imgbtnkategoribibit;
     private ImageView iconCart, iconProfile;
-    private BottomNavigationView bottomNavigationView1;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home); // Pastikan ini sesuai dengan nama file XML Anda
+        setContentView(R.layout.activity_home);
 
-        // Inisialisasi elemen UI
+        // Inisialisasi elemen-elemen ImageButton
+        imgbtnkategoribibit = findViewById(R.id.imgbtnkategoribibit);
+        imgbtnkategoripakan = findViewById(R.id.imgbtnkategoripakan);
+        imgbtnkategorilaut = findViewById(R.id.imgbtnkategorilaut);
+        imgbtnkategoritawar = findViewById(R.id.imgbtnkategoritawar);
         tvHelloCasie = findViewById(R.id.tvHelloCasie);
         tvWelcomeCasie = findViewById(R.id.tvWelcomeCasie);
         lihatSelengkapnya1 = findViewById(R.id.lihatSelengkapnya1);
         lihatSelengkapnya2 = findViewById(R.id.lihatSelengkapnya2);
-        imgbtnkategoritawar = findViewById(R.id.imgbtnkategoritawar);
-        imgbtnkategorilaut = findViewById(R.id.imgbtnkategorilaut);
-        imgbtnkategoripakan = findViewById(R.id.imgbtnkategoripakan);
-        imgbtnkategoribibit = findViewById(R.id.imgbtnkategoribibit);
         btnkirimfaq_home = findViewById(R.id.btnkirimfaq_home);
         BottomNavigationView bottomNavigationView1 = findViewById(R.id.bottom_navigation);
         iconCart = findViewById(R.id.iconCart);
         iconProfile = findViewById(R.id.iconProfile);
+
+
+        // Inisialisasi BottomNavigationView
+        bottomNavigationView1 = findViewById(R.id.bottom_navigation);
+
+        imgbtnkategoritawar.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(Home.this, KategoriTawar.class);
+                startActivity(intent);
+            }
+        });
+
+        imgbtnkategorilaut.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(Home.this, KategoriLaut.class);
+                startActivity(intent);
+            }
+        });
+
+        imgbtnkategoripakan.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(Home.this, PakanIkan.class);
+                startActivity(intent);
+            }
+        });
+
+        imgbtnkategoribibit.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(Home.this, KategoriPembibitan.class);
+                startActivity(intent);
+            }
+        });
+
 
         // Set event listener untuk tombol "Lihat Selengkapnya" pertama
         lihatSelengkapnya1.setOnClickListener(new View.OnClickListener() {
@@ -89,49 +131,6 @@ public class Home extends AppCompatActivity {
             }
         });
 
-        // Set event listener untuk kategori ikan air tawar
-        imgbtnkategoritawar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Aksi ketika ikon keranjang ditekan
-                Intent intent = new Intent(Home.this, KategoriTawar.class);
-                startActivity(intent);
-            }
-        });
-
-        // Set event listener untuk kategori ikan air laut
-        imgbtnkategorilaut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Aksi ketika ikon keranjang ditekan
-                Intent intent = new Intent(Home.this, KategoriLaut.class);
-                startActivity(intent);
-            }
-        });
-
-
-        // Set event listener untuk kategori pakan ikan
-        imgbtnkategoripakan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Aksi ketika ikon keranjang ditekan
-                Intent intent = new Intent(Home.this, PakanIkan.class);
-                startActivity(intent);
-            }
-        });
-
-
-        // Set event listener untuk kategori pembibitan ikan
-        imgbtnkategoribibit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Aksi ketika ikon keranjang ditekan
-                Intent intent = new Intent(Home.this, KategoriPembibitan.class);
-                startActivity(intent);
-            }
-        });
-
-
         // Set event listener untuk kirim faq
         btnkirimfaq_home.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -142,13 +141,15 @@ public class Home extends AppCompatActivity {
             }
         });
 
+
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        bottomNavigationView1.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if (item.getItemId() == R.id.nav_home) {
-                    Toast.makeText(Home.this, "Store selected", Toast.LENGTH_SHORT).show();
+                    makeText(Home.this, "", Toast.LENGTH_SHORT).show();makeText(Home.this, "Store selected", Toast.LENGTH_SHORT).show();
 //                    bottomNavigationView.setSelectedItemId(R.id.menu_store);
                     return true;
                 } else if (item.getItemId() == R.id.nav_artikel) {
@@ -166,6 +167,5 @@ public class Home extends AppCompatActivity {
                 }
             }
         });
-
     }
 }

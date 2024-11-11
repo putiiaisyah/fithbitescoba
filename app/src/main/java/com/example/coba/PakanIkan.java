@@ -3,6 +3,8 @@ package com.example.coba;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -15,18 +17,52 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class PakanIkan extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
+    private ImageButton buttontawarkategori, buttonlautkategori, buttonpakankategori, buttonbibitkategori;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_kategori);
+        setContentView(R.layout.activity_pakan_ikan);
 
         // Inisialisasi BottomNavigationView
         bottomNavigationView = findViewById(R.id.bottom_navigation);
+        buttontawarkategori = findViewById(R.id.buttontawarkategori);
+        buttonlautkategori = findViewById(R.id.buttonlautkategori);
+        buttonpakankategori = findViewById(R.id.buttonpakankategori);
+        buttonbibitkategori = findViewById(R.id.buttonbibitkategori);
 
-        // Set the selected item to 'Kategori' when Kategori activity is opened
-        bottomNavigationView.setSelectedItemId(R.id.nav_artikel);
+        buttontawarkategori.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(PakanIkan.this, KategoriTawar.class);
+                startActivity(intent);
+            }
+        });
+
+        buttonlautkategori.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(PakanIkan.this, KategoriLaut.class);
+                startActivity(intent);
+            }
+        });
+
+        buttonpakankategori.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(PakanIkan.this, PakanIkan.class);
+                startActivity(intent);
+            }
+        });
+
+        buttonbibitkategori.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(PakanIkan.this, KategoriPembibitan.class);
+                startActivity(intent);
+            }
+        });
 
         // Set listener untuk item bottom navigation
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -52,11 +88,5 @@ public class PakanIkan extends AppCompatActivity {
             }
         });
 
-        // Menangani window insets untuk mengatur padding agar tidak terhalang system bars
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
     }
 }
