@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailProduk">
+
+    <ImageButton
+        android:id="@+id/backbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:padding="16dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:contentDescription="Back Button"
+        android:minHeight="48dp"
+        android:minWidth="48dp" />
+
+    <!-- Title Text -->
+    <TextView
+        android:id="@+id/txtviewriwayatpembelian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Detail Produk"
+        android:textColor="@color/ijo"
+        android:fontFamily="@font/readex_boldd"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/backbutton"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="40dp" />
+
+    <ImageView
+        android:id="@+id/imgdetailproduk"
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ikan_gurame"
+        android:layout_marginTop="100dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imglocation"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/location"
+        android:layout_marginTop="250dp"
+        android:layout_marginRight="300dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/txtlocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jakarta Timur"
+        android:textSize="15sp"
+        android:fontFamily="@font/readexpro_medium"
+        android:layout_marginTop="260dp"
+        android:layout_marginRight="170dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rp 50.000/Kg"
+        android:fontFamily="@font/readexpro_medium"
+        android:textColor="@color/ijo"
+        android:layout_marginTop="260dp"
+        android:layout_marginStart="230dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"  />
+
+    <ImageView
+        android:id="@+id/bgdetailproduk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:src="@drawable/bgdetailproduk"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"  />
+
+    <TextView
+        android:id="@+id/txtnamadetailproduk"
+        android:fontFamily="@font/readex_boldd"
+        android:textSize="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ikan Gurame Fresh Frozen"
+        android:layout_marginTop="300dp"
+        android:layout_marginEnd="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"   />
+
+    <TextView
+        android:id="@+id/txtdeskripsidetailproduk"
+        android:layout_width="0dp"
+        android:layout_height="500dp"
+        android:text="Gurame adalah ikan air tawar berkualitas tinggi yang ditangkap langsung oleh petani lokal dari perairan bersih di pedesaan. Ikan ini dikenal akan dagingnya yang lembut dan lezat, dengan tekstur yang cocok untuk berbagai hidangan khas Indonesia\n\nKONDISI DAN SPESIFIKASI\n1. Gurame fresh frozen, siap dimasak\n2. Ukuran/Berat: 1 kg utuh per ekor\n3. Sudah bersih dari sisik dan isi perut, siap diolah\n\nREKOMENDASI PENGGUNAAN\nCocok untuk berbagai masakan, seperti kuliner Chinese dan Sunda. Dapat digunakan untuk menu gurame bakar, gurame goreng, gurame terbang, dll\n\nTIPS PENYIMPANAN DAN PENYAJIAN\n1. Simpan di freezer (-18°C) untuk mempertahankan kualitas.\n2. Cairkan terlebih dahulu sebelum diolah, kemudian bersihkan kembali dengan air mengalir."
+        app:layout_constraintStart_toStartOf="@id/bgdetailproduk"
+        app:layout_constraintEnd_toEndOf="@id/bgdetailproduk"
+        app:layout_constraintTop_toTopOf="@id/bgdetailproduk"
+        app:layout_constraintBottom_toBottomOf="@id/bgdetailproduk"
+        android:layout_marginTop="130dp"
+        android:layout_marginStart="-2dp"
+        android:layout_marginEnd="20dp"
+        android:justificationMode="inter_word"
+        android:textSize="12sp"
+        android:padding="16dp"/>
+
+    <ImageView
+        android:id="@+id/imgbgbawahdetailproduk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/bgbawah_detailproduk"
+        android:layout_marginTop="660dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imghomebar_detailproduk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/homebar_detailproduk"
+        android:layout_marginTop="780dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/btncheckout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/btncheckout_detailproduk"
+        android:layout_marginTop="785dp"
+        android:layout_marginEnd="200dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/txtcheckout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckOut"
+        android:textColor="@color/white"
+        android:fontFamily="@font/readexpro_medium"
+        android:layout_marginTop="785dp"
+        android:layout_marginEnd="200dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/btnmasukkeranjang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/btnmasukkeranjang_detailproduk"
+        android:layout_marginTop="785dp"
+        android:layout_marginStart="150dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtmasukkeranjang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Masukkan keranjang"
+        android:textColor="@color/white"
+        android:fontFamily="@font/readexpro_medium"
+        android:layout_marginTop="785dp"
+        android:layout_marginStart="150dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"  />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
