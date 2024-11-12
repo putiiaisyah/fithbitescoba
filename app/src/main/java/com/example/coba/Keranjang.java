@@ -9,10 +9,12 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+
 public class Keranjang extends AppCompatActivity {
     private ImageButton btnBack;
     private int productQuantity = 1; // Jumlah produk awal
-    private TextView texthargakeranjang; // TextView untuk harga
+    private TextView texthargakeranjang, textkeranjang; // TextView untuk harga
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -28,6 +30,16 @@ public class Keranjang extends AppCompatActivity {
         texthargakeranjang = findViewById(R.id.texthargakeranjang);
         TextView productName = findViewById(R.id.textproduk);
         TextView productLocation = findViewById(R.id.textalamatkeranjang);
+
+        // Inisialisasi TextView
+        textkeranjang = findViewById(R.id.textkeranjang);
+
+        // Mendapatkan item dari MainActivity (misalnya melalui Intent)
+        DetailProduk detailProduk = new DetailProduk();
+        ArrayList<String> keranjang = detailProduk.getKeranjang();
+
+        // Menampilkan item keranjang dalam TextView
+        textkeranjang.setText("Keranjang:\n" + String.join("\n", keranjang));
 
         // Set nama produk dan lokasi
         productName.setText("Ikan Tuna");

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -20,7 +21,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class KategoriTawar extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
-    private ImageButton buttontawarkategori, buttonlautkategori, buttonpakankategori, buttonbibitkategori;
+    private ImageView imgviewtawarproduk;
+    private ImageButton buttontawarkategori, buttonlautkategori, buttonpakankategori, buttonbibitkategori, imgbuttontawarproduk;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,8 @@ public class KategoriTawar extends AppCompatActivity {
         setContentView(R.layout.activity_kategori_tawar);
 
         // Inisialisasi BottomNavigationView
+        imgbuttontawarproduk = findViewById(R.id.imgbuttontawarproduk);
+        imgviewtawarproduk = findViewById(R.id.imgviewtawarproduk);
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         buttontawarkategori = findViewById(R.id.buttontawarkategori);
         buttonlautkategori = findViewById(R.id.buttonlautkategori);
@@ -37,6 +41,22 @@ public class KategoriTawar extends AppCompatActivity {
 
         // Set listener untuk item bottom navigation
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+
+        imgviewtawarproduk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(KategoriTawar.this, DetailProduk.class);
+                startActivity(intent);
+            }
+        });
+
+        imgbuttontawarproduk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(KategoriTawar.this, DetailProduk.class);
+                startActivity(intent);
+            }
+        });
 
         buttontawarkategori.setOnClickListener(new View.OnClickListener(){
             @Override

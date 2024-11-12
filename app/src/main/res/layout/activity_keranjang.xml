@@ -32,7 +32,7 @@
         android:text="Keranjang Anda"
         android:textColor="@color/ijo"
         android:fontFamily="@font/readex_boldd"
-        android:textSize="20sp"
+        android:textSize="20dp"
         app:layout_constraintStart_toEndOf="@id/backbutton"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginStart="10dp"
