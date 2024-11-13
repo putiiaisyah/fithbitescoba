@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PembayaranSelesai">
+
+    <ImageView
+        android:id="@+id/imglogorincianpesanan"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/logo_fishbites"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="150dp" />
+
+    <TextView
+        android:id="@+id/txtpembayaranselesai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pembayaran Selesai"
+        android:textSize="30dp"
+        android:fontFamily="@font/readex_boldd"
+        android:textColor="@color/ijo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="320dp"  />
+
+    <ImageView
+        android:id="@+id/bg_pembyrnselesai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/bg_bawahpesananselesai"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="500dp" />
+
+    <ImageButton
+        android:id="@+id/btnbelilagi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/btn_belilagi"
+        android:background="@android:color/transparent"
+        android:padding="16dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="beli lagi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="530dp" />
+
+    <TextView
+        android:id="@+id/txtbelilagi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Beli Lagi"
+        android:textColor="@color/white"
+        android:fontFamily="@font/readexpro_medium"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="545dp" />
+
+    <ImageButton
+        android:id="@+id/btnlihatpesanan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:padding="16dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="lihat pesanan"
+        app:srcCompat="@drawable/btn_lihatpesanan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="590dp"  />
+
+    <TextView
+        android:id="@+id/txtlihatpesanan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lihat Pesanan"
+        android:textColor="@color/yellow"
+        android:fontFamily="@font/readex_boldd"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="605dp" />
+
+    <ImageView
+        android:id="@+id/imgpembayaranselesai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/bgbawah_detailproduk"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="600dp" />
+
+    <!-- Bottom Navigation Padding -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_navigasi"
+        app:itemIconTint="@color/ijo"
+        app:itemTextColor="@color/ijo"
+        app:labelVisibilityMode="labeled"
+        app:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" >
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
