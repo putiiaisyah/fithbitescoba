@@ -13,6 +13,12 @@
         android:theme="@style/Theme.Coba"
         tools:targetApi="31">
         <activity
+            android:name=".Metode"
+            android:exported="false" />
+        <activity
+            android:name=".Keranjang2"
+            android:exported="false" />
+        <activity
             android:name=".Ulasan"
             android:exported="false" />
         <activity
