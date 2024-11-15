@@ -15,6 +15,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ViewFlipper;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +30,7 @@ public class Home extends AppCompatActivity {
     private EditText searchBar;
     private Button lihatSelengkapnya1, lihatSelengkapnya2, btnkirimfaq_home;
     private ImageView iconCart, iconProfile;
+    private ViewFlipper viewFlipper;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -49,6 +51,15 @@ public class Home extends AppCompatActivity {
         BottomNavigationView bottomNavigationView1 = findViewById(R.id.bottom_navigation);
         iconCart = findViewById(R.id.iconCart);
         iconProfile = findViewById(R.id.iconProfile);
+
+        // Inisialisasi ViewFlipper
+        viewFlipper = findViewById(R.id.viewFlipper);
+
+        // Mengatur interval flip jika diperlukan
+        viewFlipper.setFlipInterval(3000); // Ganti gambar setiap 3 detik
+
+        // Memulai ViewFlipper
+        viewFlipper.startFlipping();
 
 
         // Inisialisasi BottomNavigationView

@@ -96,12 +96,34 @@
                     android:padding="11dp"
                     android:inputType="text"
                     android:fontFamily="@font/readexpro_medium"/>
-                <ImageView
-                    android:layout_width="wrap_content"
+
+                <ViewFlipper
+                    android:id="@+id/viewFlipper"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="13dp"
                     android:layout_marginStart="16dp"
-                    android:src="@drawable/gambar" />
+                    android:autoStart="true"
+                    android:flipInterval="3000" > <!-- Gambar akan berubah setiap 3000ms atau 3 detik -->
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/budidaya_ikan" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/budidaya_ikan2" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/budidaya_ikan3" />
+
+                    <!-- Anda dapat menambahkan lebih banyak gambar jika diinginkan -->
+                </ViewFlipper>
+
 
                 <TextView
                     android:id="@+id/textkategorihome"
