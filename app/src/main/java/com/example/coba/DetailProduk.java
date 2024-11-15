@@ -19,6 +19,7 @@ import java.util.ArrayList;
 public class DetailProduk extends AppCompatActivity {
     private ImageButton backbutton;
     private ArrayList<String> keranjang = new ArrayList<>();
+    private ImageView bgcheckout;
 
 
     @SuppressLint("MissingInflatedId")
@@ -29,6 +30,7 @@ public class DetailProduk extends AppCompatActivity {
         setContentView(R.layout.activity_detail_produk);
 
         backbutton = findViewById(R.id.backbutton);
+        bgcheckout = findViewById(R.id.bgcheckout);
 
         // Set aksi ketika tombol Kembali diklik
         backbutton.setOnClickListener(new View.OnClickListener() {
@@ -53,6 +55,14 @@ public class DetailProduk extends AppCompatActivity {
 
                 // Redirect ke halaman keranjang (KeranjangActivity)
                 Intent intent = new Intent(DetailProduk.this, Keranjang.class);
+                startActivity(intent);
+            }
+        });
+
+        bgcheckout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DetailProduk.this, Keranjang2.class);
                 startActivity(intent);
             }
         });

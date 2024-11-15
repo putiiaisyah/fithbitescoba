@@ -145,7 +145,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <ImageView
-        android:id="@+id/btncheckout"
+        android:id="@+id/bgcheckout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/btncheckout_detailproduk"
