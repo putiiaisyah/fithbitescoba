@@ -74,7 +74,7 @@ public class KategoriPembibitan extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if (item.getItemId() == R.id.nav_home) {
-                    makeText(KategoriPembibitan.this, "", Toast.LENGTH_SHORT).show();makeText(KategoriPembibitan.this, "Store selected", Toast.LENGTH_SHORT).show();
+                    Intent homeIntent = new Intent(KategoriPembibitan.this, Home.class);
 //                    bottomNavigationView.setSelectedItemId(R.id.menu_store);
                     return true;
                 } else if (item.getItemId() == R.id.nav_artikel) {

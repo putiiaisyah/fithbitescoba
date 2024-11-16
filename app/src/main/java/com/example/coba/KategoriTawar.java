@@ -94,7 +94,7 @@ public class KategoriTawar extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if (item.getItemId() == R.id.nav_home) {
-                    makeText(KategoriTawar.this, "", Toast.LENGTH_SHORT).show();makeText(KategoriTawar.this, "Store selected", Toast.LENGTH_SHORT).show();
+                        Intent homeIntent = new Intent(KategoriTawar.this, Home.class);
 //                    bottomNavigationView.setSelectedItemId(R.id.menu_store);
                     return true;
                 } else if (item.getItemId() == R.id.nav_artikel) {

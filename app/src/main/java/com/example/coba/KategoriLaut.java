@@ -77,7 +77,7 @@ public class KategoriLaut extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if (item.getItemId() == R.id.nav_home) {
-                    makeText(KategoriLaut.this, "", Toast.LENGTH_SHORT).show();makeText(KategoriLaut.this, "Store selected", Toast.LENGTH_SHORT).show();
+                    Intent homeIntent = new Intent(KategoriLaut.this, Home.class);
 //                    bottomNavigationView.setSelectedItemId(R.id.menu_store);
                     return true;
                 } else if (item.getItemId() == R.id.nav_artikel) {

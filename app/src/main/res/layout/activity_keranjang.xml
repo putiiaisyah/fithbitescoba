@@ -15,13 +15,14 @@
         android:background="@android:color/transparent"
         android:padding="16dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/ic_back"
+        app:srcCompat="@drawable/ic_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginStart="15dp"
         android:layout_marginTop="30dp"
         android:contentDescription="Back Button"
-         />
+        android:minHeight="48dp"
+        android:minWidth="48dp" />
 
     <!-- Title Text -->
     <TextView
@@ -37,22 +38,19 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="40dp" />
 
-
     <!-- Background Image -->
     <ImageButton
         android:id="@+id/bgkeranjang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="-530dp"
         android:background="@android:color/transparent"
-        android:src="@drawable/bg_keranjang"
-        android:layout_marginBottom="530dp"
         android:contentDescription="bg keranjang"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bg_keranjang" />
 
     <!-- Produk Image -->
     <ImageView
@@ -111,20 +109,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="40dp" />
 
-
+    <!-- Produk Text -->
     <TextView
         android:id="@+id/textproduk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="120dp"
         android:fontFamily="@font/readexpro_medium"
         android:text="Ikan Tuna"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="120dp" />
-
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Alamat Text -->
     <TextView
@@ -164,7 +161,121 @@
         android:contentDescription="Ikon delete keranjang"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="134dp" />
+        android:layout_marginTop="134dp"
+       />
+
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="594dp"
+        android:src="@drawable/bg_co"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtsubharga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/readexpro_medium"
+        android:text="Sub Harga"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView7" />
+
+
+    <TextView
+        android:id="@+id/txttotalsubharga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="35dp"
+        android:fontFamily="@font/readexpro_medium"
+        android:text="Rp. 100.000"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView7"
+        app:layout_constraintTop_toTopOf="@+id/imageView7" />
+
+    <TextView
+        android:id="@+id/txtbiayalayanan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/readexpro_medium"
+        android:text="Biaya Layanan"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="35dp"
+        app:layout_constraintStart_toStartOf="@+id/imageView7"
+        app:layout_constraintTop_toBottomOf="@+id/txttotalsubharga" />
+
+
+    <TextView
+        android:id="@+id/txthargalayanan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/readexpro_medium"
+        android:text="Rp. 2.000"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="35dp"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView7"
+        app:layout_constraintTop_toBottomOf="@+id/txtsubharga" />
+
+    <TextView
+        android:id="@+id/txtgaris"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="85dp"
+        android:fontFamily="@font/readex_boldd"
+        android:text="------------------------"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView7"
+        app:layout_constraintStart_toStartOf="@+id/imageView7"
+        app:layout_constraintTop_toTopOf="@+id/imageView7" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/readexpro_medium"
+        android:text="Total Harga"
+        android:textColor="@color/white"
+        android:layout_marginStart="35dp"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="@+id/imageView7"
+        app:layout_constraintTop_toBottomOf="@+id/txtgaris" />
+
+    <TextView
+        android:id="@+id/totalhargatxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:fontFamily="@font/readexpro_medium"
+        android:text="Rp. 102.000"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtgaris" />
+
+    <Button
+        android:id="@+id/btnpesansekarang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/yellow"
+        android:fontFamily="@font/readex_boldd"
+        android:text="Pesan Sekarang"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView7"
+        app:layout_constraintTop_toBottomOf="@+id/totalhargatxt" />
 
     <CheckBox
         android:id="@+id/checkboxkeranjang"
@@ -174,5 +285,7 @@
         android:layout_marginEnd="350dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
