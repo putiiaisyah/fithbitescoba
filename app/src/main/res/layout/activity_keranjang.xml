@@ -80,7 +80,7 @@
         android:background="@android:color/transparent"
         android:contentDescription="Ikon kurangi produk"
         app:layout_constraintTop_toTopOf="@id/texthargakeranjang"
-        android:layout_marginStart="220dp"
+        android:layout_marginStart="245dp"
         app:layout_constraintStart_toStartOf="parent" />
 
     <!-- EditText for Quantity -->
@@ -97,7 +97,7 @@
         app:layout_constraintStart_toEndOf="@id/icminus_keranjang"
         app:layout_constraintEnd_toStartOf="@id/icplus_keranjang"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
+        android:layout_marginEnd="3dp" />
 
     <!-- Plus Button -->
     <ImageButton
@@ -109,9 +109,7 @@
         android:contentDescription="Ikon tambah produk"
         app:layout_constraintTop_toTopOf="@id/texthargakeranjang"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="60dp" />
-
-
+        android:layout_marginEnd="40dp" />
 
 
     <TextView
@@ -166,8 +164,7 @@
         android:contentDescription="Ikon delete keranjang"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="134dp"
-        android:layout_marginEnd="15dp" />
+        android:layout_marginTop="134dp" />
 
     <CheckBox
         android:id="@+id/checkboxkeranjang"

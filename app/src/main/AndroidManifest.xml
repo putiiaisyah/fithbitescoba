@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Coba"
         tools:targetApi="31">
         <activity
+            android:name=".StatusPesanan"
+            android:exported="false" />
+        <activity
             android:name=".Metode"
             android:exported="false" />
         <activity
