@@ -165,7 +165,6 @@ public class Home extends AppCompatActivity {
                     return true;
                 } else if (item.getItemId() == R.id.nav_artikel) {
                     Intent intent = new Intent(Home.this, Artikel.class);
-
                     startActivity(intent);
                     return true;
                 } else if (item.getItemId() == R.id.nav_profil) {
