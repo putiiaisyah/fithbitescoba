@@ -81,7 +81,7 @@ public class KategoriLaut extends AppCompatActivity {
 //                    bottomNavigationView.setSelectedItemId(R.id.menu_store);
                     return true;
                 } else if (item.getItemId() == R.id.nav_artikel) {
-                    Intent intent = new Intent(KategoriLaut.this, DetailArtikel.class);
+                    Intent intent = new Intent(KategoriLaut.this, Artikel.class);
 
                     startActivity(intent);
                     return true;

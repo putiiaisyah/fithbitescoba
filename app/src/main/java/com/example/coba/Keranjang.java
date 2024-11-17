@@ -1,11 +1,14 @@
 package com.example.coba;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +21,7 @@ public class Keranjang extends AppCompatActivity {
     private EditText editText_quantity;
     private int productQuantity = 1; // Jumlah produk awal
     private TextView texthargakeranjang, textkeranjang, txtquantity;// TextView untuk harga
+    private Button btnpesansekarang;
 
 
     @SuppressLint("MissingInflatedId")
@@ -38,8 +42,40 @@ public class Keranjang extends AppCompatActivity {
         icplus_keranjang = findViewById(R.id.icplus_keranjang);
         icminus_keranjang = findViewById(R.id.icminus_keranjang);
         txtquantity = findViewById(R.id.txtquantity);
+        CheckBox checkBoxkeranjang = findViewById(R.id.checkboxkeranjang);
+        ImageView imageView7 = findViewById(R.id.imageView7);
+        TextView txtsubharga = findViewById(R.id.txtsubharga);
+        TextView txttotalsubharga = findViewById(R.id.txttotalsubharga);
+        TextView txtbiayalayanan = findViewById(R.id.txtbiayalayanan);
+        TextView txthargalayanan = findViewById(R.id.txthargalayanan);
+        TextView txtgaris = findViewById(R.id.txtgaris);
+        TextView totalhargatxt = findViewById(R.id.totalhargatxt);
+        Button btnpesansekarang = findViewById(R.id.btnpesansekarang);
 
-
+        // Set listener untuk checkbox
+        checkboxkeranjang.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            // Jika checkbox dicentang, tampilkan elemen
+            if (isChecked) {
+                imageView7.setVisibility(View.VISIBLE);
+                txtsubharga.setVisibility(View.VISIBLE);
+                txttotalsubharga.setVisibility(View.VISIBLE);
+                txtbiayalayanan.setVisibility(View.VISIBLE);
+                txthargalayanan.setVisibility(View.VISIBLE);
+                txtgaris.setVisibility(View.VISIBLE);
+                totalhargatxt.setVisibility(View.VISIBLE);
+                btnpesansekarang.setVisibility(View.VISIBLE);
+            } else {
+                // Jika checkbox tidak dicentang, sembunyikan elemen
+                imageView7.setVisibility(View.GONE);
+                txtsubharga.setVisibility(View.GONE);
+                txttotalsubharga.setVisibility(View.GONE);
+                txtbiayalayanan.setVisibility(View.GONE);
+                txthargalayanan.setVisibility(View.GONE);
+                txtgaris.setVisibility(View.GONE);
+                totalhargatxt.setVisibility(View.GONE);
+                btnpesansekarang.setVisibility(View.GONE);
+            }
+        });
 
         // Inisialisasi TextView
         textkeranjang = findViewById(R.id.textkeranjang);
@@ -63,6 +99,15 @@ public class Keranjang extends AppCompatActivity {
                 finish(); // Menutup activity ini dan kembali ke activity sebelumnya
             }
         });
+        // Fungsi untuk tombol back
+        btnpesansekarang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Keranjang.this, DetailPemesananProduk.class);
+                startActivity(intent);
+            }
+        });
+
 
         // Set nilai awal
         txtquantity.setText("1");

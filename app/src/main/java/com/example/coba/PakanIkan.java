@@ -76,7 +76,7 @@ public class PakanIkan extends AppCompatActivity {
                     return true;
                 } else if (item.getItemId() == R.id.nav_artikel) {
                     // Navigasi ke Artikel activity
-                    Intent artikelIntent = new Intent(PakanIkan.this, DetailArtikel.class);
+                    Intent artikelIntent = new Intent(PakanIkan.this, Artikel.class);
                     startActivity(artikelIntent);
                     return true;
                 } else if (item.getItemId() == R.id.nav_profil) {

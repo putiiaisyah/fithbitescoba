@@ -98,7 +98,7 @@ public class KategoriTawar extends AppCompatActivity {
 //                    bottomNavigationView.setSelectedItemId(R.id.menu_store);
                     return true;
                 } else if (item.getItemId() == R.id.nav_artikel) {
-                    Intent intent = new Intent(KategoriTawar.this, DetailArtikel.class);
+                    Intent intent = new Intent(KategoriTawar.this, Artikel.class);
 
                     startActivity(intent);
                     return true;

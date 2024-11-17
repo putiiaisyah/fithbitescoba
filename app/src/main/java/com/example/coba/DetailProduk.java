@@ -62,7 +62,7 @@ public class DetailProduk extends AppCompatActivity {
         bgcheckout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DetailProduk.this, Keranjang2.class);
+                Intent intent = new Intent(DetailProduk.this, Keranjang.class);
                 startActivity(intent);
             }
         });
